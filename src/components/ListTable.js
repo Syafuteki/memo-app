@@ -8,7 +8,7 @@ import {
   FlatList,
   SafeAreaView,
 } from 'react-native';
-import getLists from '../realm/getLists';
+import getLists from '../realm/getLists2';
 
 const dummy = () => {
   return 10;
@@ -74,7 +74,7 @@ const Body = () => {
             </View>
           );
         }}
-        keyExtractor={item => item.id.toString()}
+        //keyExtractor={item => item.id.toString()}
       />
     </SafeAreaView>
   );

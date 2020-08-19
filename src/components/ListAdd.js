@@ -10,7 +10,7 @@ import {
   TextInput,
   TouchableHighlight,
 } from 'react-native';
-import add from '../realm/add';
+import add from '../realm/add2';
 
 const dummy = () => {
   return 10;
