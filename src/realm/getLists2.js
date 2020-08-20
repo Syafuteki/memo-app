@@ -9,21 +9,15 @@ const ListSchema = {
   },
 };
 
-const getLists = () => {
-  Realm.open({
+const getLists = async () => {
+  await Realm.open({
     path: 'listRealm.Realm',
     schema: [ListSchema],
   })
     .then((realm) => {
-      try {
-        const lists = realm.objects('List');
-        console.log(lists);
-        console.log('aaa');
-        return lists;
-      } catch (e) {
-        //* ここアラートかなんか出す
-        console.log(e);
-      }
+      const lists = realm.objects('List');
+      console.log(lists);
+      return lists;
     })
     .catch((e) => {
       //* ここアラートかなんか出す

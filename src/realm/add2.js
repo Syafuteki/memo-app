@@ -15,10 +15,10 @@ const add = (name) => {
     path: 'listRealm.Realm',
     schema: [ListSchema],
   })
-    .then(() => {
+    .then((realm) => {
       try {
-        Realm.write(() => {
-          Realm.create('List', {name: name, content: '', date: date});
+        realm.write(() => {
+          realm.create('List', {name: name, content: '', date: date});
         });
       } catch (e) {
         //* ここアラートかなんか出す
@@ -30,8 +30,8 @@ const add = (name) => {
       console.log(e);
     })
     .finally(() => {
-      Realm.close();
+      realm.close();
     });
 };
-
-export default add;
+add('wata');
+//export default add;
